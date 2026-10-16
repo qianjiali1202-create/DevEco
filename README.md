@@ -13,6 +13,32 @@
 
 [IDE 文件树体验研究](analysis/ide-tree-lab/index.html)已收录在启动页「分析与研究」。包含竞品对照、20 / 20 / 16 参数方案、4px 图文间距、IDE 交互效果及截图；[研究材料](analysis/ide-tree-lab/RESEARCH.md)署名钱佳丽。原仓库其他材料保留原作者归属，原启动页见 [Cinnnnnnndy / DevEco](https://cinnnnnnndy.github.io/DevEco/)。
 
+## 材料分析 Skill · material-analysis
+
+本仓库收录了 [材料分析与研究 Skill](.agents/skills/material-analysis/SKILL.md)，用于文档、报告、网页、截图和访谈材料的解读、多来源综合、竞品比较与方案评审。IDE 文件树是可选案例，不是所有任务的默认分析框架。
+
+### 在 Codex 中调用
+
+1. 将仓库克隆或同步到本机，在 Codex 中打开本仓库目录。
+2. 在对话中使用 `$material-analysis`，同时提供材料路径或链接、分析目的和期望输出。Codex 可从仓库的 `.agents/skills/` 目录发现技能；若刚同步后未显示，可重新打开会话或重启 Codex。
+3. 如果本机还安装了同名个人 Skill，可明确要求使用本仓库的 `.agents/skills/material-analysis/SKILL.md`，避免使用不同版本。调用方式见 [官方说明](https://learn.chatgpt.com/docs/build-skills)。
+
+可直接复制以下提示词，将方括号内容换成实际任务：
+
+> 使用 $material-analysis，分析 [材料路径或链接]。面向 [读者]，回答 [核心问题]，提炼关键发现，区分材料主张、事实与推断，并给出有依据的建议。
+
+> 使用 $material-analysis，对比 [材料 A] 和 [材料 B]，统一比较口径，说明共识、差异、矛盾与信息缺口，输出比较表和结论。
+
+> 使用 $material-analysis，将 [材料路径或链接] 整理成研究网页，署名 [姓名]。新增页面采用指定 IJ 组件库，完成后合入本仓库「分析与研究」分类并提交。
+
+### 页面设计与交付范围
+
+新生成的研究网页、方案界面、交互原型，以及材料中的自制产品界面图，使用 [Int UI Kit Community](https://www.figma.com/design/3q89XhaMGImDOPJwvfEpd7/Int-UI-Kit--Community-?node-id=733-46971) 的组件、样式与图标，核对来源、变体与状态；具体要求见 [IJ 页面搭建规范](.agents/skills/material-analysis/references/ij-components.md)。引用的原始截图保持原貌。读取在线 Figma 资源需要相应访问权限；无法读取时如实说明，不把近似仿制称为组件复用。
+
+GitHub 用于保存与共享 Skill 文件，实际分析在 Codex 中运行；单独打开 GitHub 文件或 Pages 网站不会执行技能，也不需要先启用 Pages 才能调用。发布或提交以当前请求的授权范围为准。
+
+该目录包含入口、界面元数据和四份按需读取的参考资料；共享时保留完整目录。修改后提交到仓库，其他使用者同步更新即可。
+
 ## 里面有什么
 
 | 目录 / 文件 | 是什么 |
@@ -124,3 +150,4 @@
 配好之后所有相对链接（demo、分析页、pptx 等）照常可用，不用改任何路径；每个 `demos/<slug>/index.html` 也会各自变成一条可以直接分享的独立网址。
 
 **根目录的 `.nojekyll` 不要删。** GitHub Pages 默认会跑 Jekyll 构建，Jekyll 会把名字以下划线开头的目录整个跳过不发布——`demos/_shared/`（所有 demo 共用的 `frame.js` / `frame.css`）正好是这种目录。少了 `.nojekyll`，线上每个 demo 都会因为 `DemoFrame` 未定义而白屏（本地 `file://` 打开不受影响，只有真正发布到 Pages 才会踩到，所以容易漏测）。
+

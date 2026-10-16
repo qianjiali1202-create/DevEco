@@ -1,0 +1,3 @@
+interface:
+  display_name: "材料分析与研究"
+  short_description: "解读多来源材料、比较方案并提炼研究结论，使用 IJ 组件搭建生成的展示页面"
