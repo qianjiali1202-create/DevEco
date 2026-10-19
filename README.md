@@ -151,3 +151,9 @@ GitHub 用于保存与共享 Skill 文件，实际分析在 Codex 中运行；�
 
 **根目录的 `.nojekyll` 不要删。** GitHub Pages 默认会跑 Jekyll 构建，Jekyll 会把名字以下划线开头的目录整个跳过不发布——`demos/_shared/`（所有 demo 共用的 `frame.js` / `frame.css`）正好是这种目录。少了 `.nojekyll`，线上每个 demo 都会因为 `DemoFrame` 未定义而白屏（本地 `file://` 打开不受影响，只有真正发布到 Pages 才会踩到，所以容易漏测）。
 
+
+## IDE 字号与组件尺度研究 · 钱佳丽
+
+[交互研究](analysis/ide-typography-components/index.html) · [完整材料](analysis/ide-typography-components/RESEARCH.md) · [IJ 页面还原](analysis/ide-typography-components/index.html#ide)
+
+2026-10-19：比较 IntelliJ IDEA、VS Code、Cursor、TRAE 与 Xcode，提供字号、文字行高、组件高度和圆角的证据对照。包含 IJ 组件拆解、可调密度实验、设置界面图和 CSV / CSS 导出。规范、源码计算值与设计建议分别标注，未确认数据保留待测。已收录启动页「分析与研究」。

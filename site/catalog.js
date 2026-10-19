@@ -363,6 +363,19 @@ window.DEVECO_CATALOG = {
       note: '对内汇报与对外协同共用的事实基础：以开发者证据推动方案，不以设计观点推动方案。',
       items: [
         {
+          title: 'IDE 字号、行高与组件尺度研究',
+          author: '钱佳丽', subtitle: 'Typography & Components · UX Research',
+          desc: '钱佳丽：分析 IntelliJ IDEA、VS Code、Cursor、TRAE 与 Xcode 的字号、行高和组件尺度，区分官方规范、固定源码与待测数据。包含 IJ 组件尺寸拆解、13/16 · 14/20 · 16/24 密度实验、设置界面还原与完整研究下载。',
+          view: 'ready', date: '2026-10-19', href: 'analysis/ide-typography-components/index.html',
+          links: [
+            { label: '竞品对照', href: 'analysis/ide-typography-components/index.html#compare' },
+            { label: '页面还原', href: 'analysis/ide-typography-components/index.html#ide' },
+            { label: '研究材料', href: 'analysis/ide-typography-components/RESEARCH.md' },
+          ],
+          tags: ['钱佳丽', 'IDE', '字号', '行高', '圆角', '组件', 'Int UI Kit'],
+          thumb: { type: 'image', src: 'analysis/ide-typography-components/assets/settings-preview.png' },
+        },
+        {
           title: 'IDE 文件树体验研究：间距、缩进与信息密度',
           author: '钱佳丽', subtitle: 'Tree Lab · UX Research',
           desc: '钱佳丽：比较 IntelliJ IDEA、Fleet、Xcode、Cursor、TRAE，提出 20px 箭头容器 / 20px 图标容器 / 16px 字号与 4px 图文间距方案。含 16 / 20 / 24px 缩进对比、Int UI Kit IDE 交互效果、截图与 CSS 导出；估算、上游参考与设计建议分开标注。',

@@ -1,0 +1,240 @@
+window.RESEARCH = {
+  "date": "2026-10-19",
+  "author": "钱佳丽",
+  "version": "1.0",
+  "scope": "5 个当前产品 + Fleet 历史说明；其中 2 个体系有可追溯数字，未进行竞品本机实测。",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "JetBrains · Typography",
+      "type": "官方规范",
+      "url": "https://plugins.jetbrains.com/docs/intellij/typography.html",
+      "note": "UI 使用 Inter；默认 13；H1 为默认 +5、H2 为默认 +3；提示为默认 −1。文档日期 2025-11-06。"
+    },
+    {
+      "id": "S02",
+      "title": "Int UI Kit · 按钮 / 输入框",
+      "type": "Figma 组件",
+      "url": "https://www.figma.com/design/3q89XhaMGImDOPJwvfEpd7/Int-UI-Kit--Community-?node-id=146-52068",
+      "note": "Light / Active：文字 13/16；主按钮可见高 28、外层高 40、圆角 4。输入框 7399:46819 为 224 × 40，内容 224 × 28。"
+    },
+    {
+      "id": "S03",
+      "title": "Int UI Kit · 复选框 / 页签 / 表格 / 弹窗",
+      "type": "Figma 组件",
+      "url": "https://www.figma.com/design/3q89XhaMGImDOPJwvfEpd7/Int-UI-Kit--Community-?node-id=7070-146270",
+      "note": "逐节点读取尺寸与截图；复选框 3590:81636、3590:81640；页签 5664:81616；表格 7278:46644；弹窗 7070:146270。"
+    },
+    {
+      "id": "S04",
+      "title": "IntelliJ IDEA 2026.2 · Editor Font",
+      "type": "官方设置",
+      "url": "https://www.jetbrains.com/help/idea/settings-editor-font.html",
+      "note": "编辑器字号用 points；默认行高因子为 1.2，可调整。文档日期 2026-08-17。未据此推算 UI 行高。"
+    },
+    {
+      "id": "S05",
+      "title": "VS Code · workbench 基础样式",
+      "type": "固定源码",
+      "url": "https://github.com/microsoft/vscode/blob/f9444d6d3ce7a745125e1d864b3fc6dfe02a9656/src/vs/workbench/browser/media/style.css#L48",
+      "note": "主线快照 f9444d6，2026-10-19。基础字号 13px、行高 1.4em；组件可覆盖。"
+    },
+    {
+      "id": "S06",
+      "title": "VS Code · editor fontInfo",
+      "type": "固定源码",
+      "url": "https://github.com/microsoft/vscode/blob/f9444d6d3ce7a745125e1d864b3fc6dfe02a9656/src/vs/editor/common/config/fontInfo.ts#L14",
+      "note": "默认字号 macOS 12 / Windows 与 Linux 14；默认 lineHeight=0 时按 macOS 1.5、其他平台 1.35 计算并四舍五入。EditorZoom=0 时分别为 18px、19px。"
+    },
+    {
+      "id": "S07",
+      "title": "VS Code · Button / Input / Explorer",
+      "type": "固定源码",
+      "url": "https://github.com/microsoft/vscode/blob/f9444d6d3ce7a745125e1d864b3fc6dfe02a9656/src/vs/base/browser/ui/button/button.css#L6",
+      "note": "基础文字按钮 12/16，padding 4px 8px，border 1px、radius 4px；单行总高据此算得 26px。explorerViewer.ts 中 ITEM_HEIGHT=22。Input 基类 radius=4，无统一固定高度。"
+    },
+    {
+      "id": "S08",
+      "title": "Cursor · Themes and appearance",
+      "type": "官方设置",
+      "url": "https://cursor.com/help/customization/themes",
+      "note": "编辑器与终端字号可分别调节；IDE 与 Agents Window 的入口有区别。该页未公布组件尺寸与默认字体数值。"
+    },
+    {
+      "id": "S09",
+      "title": "TRAE · IDE 设置总览",
+      "type": "官方设置",
+      "url": "https://docs.trae.cn/ide_ide-settings",
+      "note": "提供主题和 Editor 字体、word-wrap、window 等参数设置。该页未给出默认字号、行高、圆角。"
+    },
+    {
+      "id": "S10",
+      "title": "Apple · Xcode workspace themes",
+      "type": "官方设置",
+      "url": "https://developer.apple.com/documentation/xcode/customizing-your-workspace-using-themes",
+      "note": "Code / Prose / Console 字体可分别配置，并可覆盖个别文本类型；页面未给出统一默认字号。已读取官方 DocC JSON 正文。"
+    },
+    {
+      "id": "S11",
+      "title": "Apple HIG · Typography",
+      "type": "平台参考",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/typography",
+      "note": "macOS 平台默认字号参考为 13pt；不是对 Xcode 导航器或控件的测量。已读取官方 DocC JSON 正文。"
+    },
+    {
+      "id": "S12",
+      "title": "JetBrains · The Future of Fleet",
+      "type": "历史状态",
+      "url": "https://blog.jetbrains.com/fleet/2025/12/the-future-of-fleet/",
+      "note": "Fleet 自 2025-12-22 起停止下载；文章 2026 年 5 月补充 Fleet 演进为 Air。本研究仅保留历史上下文。"
+    }
+  ],
+  "products": [
+    {
+      "id": "idea",
+      "name": "IntelliJ IDEA",
+      "kind": "规范 + 组件",
+      "ui": "13（官方默认）",
+      "line": "16px（本库 UI）",
+      "editor": "字号可配；1.2 行高因子",
+      "row": "24px（本库表格）",
+      "control": "28px / R4（本库）",
+      "evidence": "quantified",
+      "refs": [
+        "S01",
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "note": "官方字号文档、本次 Community 库及实际运行版本不是同一证据层。UI 默认 13 与库中 13/16 相符；编辑器参数不能套到菜单、表格。库的尺寸以设计逻辑单位记录，网页按 CSS px 实现。"
+    },
+    {
+      "id": "vscode",
+      "name": "VS Code",
+      "kind": "固定源码",
+      "ui": "13px（workbench 基础）",
+      "line": "18.2px（13 × 1.4）",
+      "editor": "macOS 12/18；Win/Linux 14/19 px",
+      "row": "22px（Explorer）",
+      "control": "26px¹ / R4（基础按钮）",
+      "evidence": "quantified",
+      "refs": [
+        "S05",
+        "S06",
+        "S07"
+      ],
+      "note": "取 2026-10-19 主线提交 f9444d6，而非某个已安装稳定版。18.2px 仅为 workbench 继承样式的计算值；具体控件有覆盖。¹26px=16+4×2+1×2，来自基础按钮样式，不代表所有按钮。编辑器取默认选项、EditorZoom=0。"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "kind": "官方设置",
+      "ui": "待测",
+      "line": "待测",
+      "editor": "编辑器 / 终端分别可配",
+      "row": "待测",
+      "control": "待测",
+      "evidence": "pending",
+      "refs": [
+        "S08"
+      ],
+      "note": "官方文档可确认字体可配置，未给出可靠默认值。Agents Window 与 IDE 要分开采样。共享生态和相似外观不能证明其尺寸等于 VS Code。"
+    },
+    {
+      "id": "trae",
+      "name": "TRAE",
+      "kind": "官方设置",
+      "ui": "待测",
+      "line": "待测",
+      "editor": "Editor 设置可调整",
+      "row": "待测",
+      "control": "待测",
+      "evidence": "pending",
+      "refs": [
+        "S09"
+      ],
+      "note": "官方文档可确认主题、字体、window 等设置入口，未公布尺寸。需分别采集编辑区、导航区及 AI 对话区；导入 VS Code / Cursor 设置后不应再叫“出厂默认值”。"
+    },
+    {
+      "id": "xcode",
+      "name": "Xcode",
+      "kind": "官方设置 + 平台参考",
+      "ui": "待测；macOS 参考 13pt",
+      "line": "待测",
+      "editor": "Code / Prose / Console 分开配置",
+      "row": "待测",
+      "control": "待测",
+      "evidence": "pending",
+      "refs": [
+        "S10",
+        "S11"
+      ],
+      "note": "13pt 来自 Apple 平台指南，不是 Xcode 实测。原生 pt、网页 CSS px、截图物理像素不直接混比；同一显示器与缩放条件下再采集。"
+    }
+  ],
+  "components": [
+    {
+      "name": "Primary button",
+      "node": "146:52068",
+      "text": "13 / 16",
+      "visible": "28",
+      "outer": "40",
+      "radius": "4",
+      "detail": "最小标签宽 48，左右 padding 12；外层上下各 6。"
+    },
+    {
+      "name": "Secondary button",
+      "node": "146:52058",
+      "text": "13 / 16",
+      "visible": "28",
+      "outer": "40",
+      "radius": "4",
+      "detail": "描边 1；用内描边保留固定高度，避免状态切换引起位移。"
+    },
+    {
+      "name": "Input",
+      "node": "7399:46819",
+      "text": "13 / 16",
+      "visible": "28",
+      "outer": "40",
+      "radius": "4",
+      "detail": "默认宽 224；文字距左 9；Focus 节点 7399:46991，蓝色 2px 内描边。"
+    },
+    {
+      "name": "Checkbox",
+      "node": "3590:81640",
+      "text": "13 / 16",
+      "visible": "16 × 16",
+      "outer": "32",
+      "radius": "3²",
+      "detail": "图文间距 8，外层上下各 8；²3px 为 unchecked 3590:81636 边框，checked 使用原 SVG。"
+    },
+    {
+      "name": "Tabs",
+      "node": "5664:81616",
+      "text": "13 / 16",
+      "visible": "41",
+      "outer": "41",
+      "radius": "2³",
+      "detail": "Selected 顶部 12、底部 10、指示条高 3；³仅指示条圆角，不是整个页签。"
+    },
+    {
+      "name": "Table row",
+      "node": "7278:46644",
+      "text": "13 / 16",
+      "visible": "24",
+      "outer": "24",
+      "radius": "0",
+      "detail": "单行表格行高 24、左右 padding 8；本报告长文本表格为换行扩展，非原尺寸样本。"
+    },
+    {
+      "name": "Dialog",
+      "node": "7070:146270",
+      "text": "13 / 16",
+      "visible": "883 × 495",
+      "outer": "883 × 495",
+      "radius": "8",
+      "detail": "此样本尺寸，非所有弹窗固定尺寸；标题区 33、底栏 57、描边 0.5、阴影 0 8 40 / 30%。"
+    }
+  ]
+};

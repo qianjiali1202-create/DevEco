@@ -1,0 +1,117 @@
+{
+  "source_file": "https://www.figma.com/design/3q89XhaMGImDOPJwvfEpd7/Int-UI-Kit--Community-",
+  "retrieved": "2026-10-19",
+  "implementation": "基于 Int UI Kit 的 HTML/CSS 代码组件；不是 Figma 实例或官方发布组件包。",
+  "components": [
+    {
+      "name": "Primary button",
+      "node": "146:52068",
+      "text": "13 / 16",
+      "visible": "28",
+      "outer": "40",
+      "radius": "4",
+      "detail": "最小标签宽 48，左右 padding 12；外层上下各 6。"
+    },
+    {
+      "name": "Secondary button",
+      "node": "146:52058",
+      "text": "13 / 16",
+      "visible": "28",
+      "outer": "40",
+      "radius": "4",
+      "detail": "描边 1；用内描边保留固定高度，避免状态切换引起位移。"
+    },
+    {
+      "name": "Input",
+      "node": "7399:46819",
+      "text": "13 / 16",
+      "visible": "28",
+      "outer": "40",
+      "radius": "4",
+      "detail": "默认宽 224；文字距左 9；Focus 节点 7399:46991，蓝色 2px 内描边。"
+    },
+    {
+      "name": "Checkbox",
+      "node": "3590:81640",
+      "text": "13 / 16",
+      "visible": "16 × 16",
+      "outer": "32",
+      "radius": "3²",
+      "detail": "图文间距 8，外层上下各 8；²3px 为 unchecked 3590:81636 边框，checked 使用原 SVG。"
+    },
+    {
+      "name": "Tabs",
+      "node": "5664:81616",
+      "text": "13 / 16",
+      "visible": "41",
+      "outer": "41",
+      "radius": "2³",
+      "detail": "Selected 顶部 12、底部 10、指示条高 3；³仅指示条圆角，不是整个页签。"
+    },
+    {
+      "name": "Table row",
+      "node": "7278:46644",
+      "text": "13 / 16",
+      "visible": "24",
+      "outer": "24",
+      "radius": "0",
+      "detail": "单行表格行高 24、左右 padding 8；本报告长文本表格为换行扩展，非原尺寸样本。"
+    },
+    {
+      "name": "Dialog",
+      "node": "7070:146270",
+      "text": "13 / 16",
+      "visible": "883 × 495",
+      "outer": "883 × 495",
+      "radius": "8",
+      "detail": "此样本尺寸，非所有弹窗固定尺寸；标题区 33、底栏 57、描边 0.5、阴影 0 8 40 / 30%。"
+    }
+  ],
+  "extra_states": [
+    {
+      "node": "146:52071",
+      "variant": "Primary Hover",
+      "background": "#3369D6"
+    },
+    {
+      "node": "7399:46991",
+      "variant": "Input Focus",
+      "border": "2px #3574F0"
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/checkbox-checked.svg",
+      "node": "3590:81640",
+      "intrinsic": "16 × 16"
+    },
+    {
+      "file": "assets/mac-controls.svg",
+      "node": "7070:146270",
+      "intrinsic": "52 × 12"
+    },
+    {
+      "file": "assets/help.svg",
+      "node": "7070:146270",
+      "intrinsic": "24 × 24"
+    },
+    {
+      "file": "assets/dialog-divider.svg",
+      "node": "7070:146270",
+      "intrinsic": "882 × 1"
+    }
+  ],
+  "fonts": {
+    "latin": "InterVariable.woff2，https://github.com/rsms/inter，SIL OFL，随附许可",
+    "cjk": "系统 PingFang SC / Microsoft YaHei / sans-serif；中文回退是适配，不冒充 Inter 中文字形"
+  },
+  "extensions": [
+    "研究文章布局、侧导航及证据标签为基础组件组合；正文 13/22、标题 18/24 服务阅读。",
+    "比较表允许换行；只有样本表使用精确 24px 单行。",
+    "密度实验中 14/20、16/24，控件 32/36、行高 28/32 为设计建议；不是 IJ 原始值。",
+    "弹窗中央内容为本研究设置方案；原 Header/Footer、外框及尺寸保持来自节点。",
+    "按钮 hover 与输入 focus 来自已读节点；其余鼠标按下、链接焦点、移动布局是可访问性扩展，不称作原库变体。",
+    "文字层级示例：官方字号 H1 18 / H2 16；行高 24 / 22 是研究方案，提示 12/16 保持小号辅助层级。"
+  ],
+  "attribution": "Int UI Kit Community / JetBrains 组件来源保留；研究整理与方案：钱佳丽。"
+}
