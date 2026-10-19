@@ -1,16 +1,14 @@
-# IDE Typography & Components
+# 鸿蒙电脑 IDE 尺度研究
 
-研究整理与方案设计：钱佳丽 · 2026-10-19
+钱佳丽 · 2026-10-19 · v2.0
 
-- [交互研究](index.html)：结论、5 款 IDE 对照、IJ 组件拆解、密度实验、设置页面还原。
-- [完整研究](RESEARCH.md) / [对照 CSV](comparison.csv) / [证据 JSON](sources.json)
-- [组件来源与扩展](component-map.json)
-- [设置界面图](assets/settings-preview.png) / [研究概览图](assets/overview.png)
+目标：设计一款面向鸿蒙电脑、以键鼠为主并兼顾触屏的 IDE。以主流IDE比较和鸿蒙场景推导参数；IJ仅提供展示组件来源。
 
-静态 HTML/CSS/JS，无构建、无后端。以 DevEco 仓库根目录启动静态服务，打开 `analysis/ide-typography-components/`；也可双击 index.html。跨研究与返回门户链接依赖原仓库相对目录。
+- [交互研究](index.html) · [竞品对照](index.html#compare) · [完整IDE预览](index.html#ide)
+- [研究报告](RESEARCH.md) · [对照CSV](comparison.csv) · [证据数据](sources.json)
+- [鸿蒙候选参数与单位](harmony-tokens.json) · [组件映射](component-map.json)
+- [IDE界面图](assets/harmony-ide.png) · [设置界面图](assets/settings-preview.png)
 
-Figma 文件为用户指定的 Int UI Kit Community；组件是读取节点后的代码实现。源码值、规范值、推导值和建议分开呈现。Cursor、TRAE、Xcode 的未验证尺寸明确待测；Fleet 仅作历史背景。
+静态页面，无构建和后端；以仓库根目录启动静态服务。复用相邻Tree Lab的已核对IJ图标与仓库HarmonyOS字体，因此需保留仓库相对目录。CSS px预览不能替代vp/fp真机标定。
 
-`data.js` 与 `sources.json` 保存同一组研究数据；修改结论时同步 RESEARCH.md、CSV、摘要、导出与截图。新增组件须读取真实节点并更新 component-map.json。
-
-本页默认 Light。Inter 使用官方 OFL 许可，见 assets/Inter-LICENSE.txt；中文使用系统回退。组件原资源和产品资料的来源保留，研究署名不覆盖其作者归属。
+v2修订：从“以IJ为默认”改为“竞品对照→鸿蒙电脑IDE选型”；补充Zed源码、输入方式、间距、触控热区、分区文字与完整工作台。未测竞品数据保留空缺，所有推荐为待验证候选。

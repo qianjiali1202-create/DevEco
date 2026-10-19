@@ -1,7 +1,7 @@
 {
   "source_file": "https://www.figma.com/design/3q89XhaMGImDOPJwvfEpd7/Int-UI-Kit--Community-",
   "retrieved": "2026-10-19",
-  "implementation": "基于 Int UI Kit 的 HTML/CSS 代码组件；不是 Figma 实例或官方发布组件包。",
+  "implementation": "IJ仅为展示结构与基础组件来源；鸿蒙IDE候选参数覆盖不代表IJ或鸿蒙官方规范。",
   "components": [
     {
       "name": "Primary button",
@@ -103,15 +103,27 @@
   ],
   "fonts": {
     "latin": "InterVariable.woff2，https://github.com/rsms/inter，SIL OFL，随附许可",
-    "cjk": "系统 PingFang SC / Microsoft YaHei / sans-serif；中文回退是适配，不冒充 Inter 中文字形"
+    "cjk": "系统 PingFang SC / Microsoft YaHei / sans-serif；中文回退是适配，不冒充 Inter 中文字形",
+    "proposal": "仓库deveco-intui-kit/fonts/fonts.css，HarmonyOS Sans SC及JetBrains Mono；保留原许可。"
   },
   "extensions": [
-    "研究文章布局、侧导航及证据标签为基础组件组合；正文 13/22、标题 18/24 服务阅读。",
-    "比较表允许换行；只有样本表使用精确 24px 单行。",
-    "密度实验中 14/20、16/24，控件 32/36、行高 28/32 为设计建议；不是 IJ 原始值。",
-    "弹窗中央内容为本研究设置方案；原 Header/Footer、外框及尺寸保持来自节点。",
-    "按钮 hover 与输入 focus 来自已读节点；其余鼠标按下、链接焦点、移动布局是可访问性扩展，不称作原库变体。",
-    "文字层级示例：官方字号 H1 18 / H2 16；行高 24 / 22 是研究方案，提示 12/16 保持小号辅助层级。"
+    "来源页保留IJ原值；推荐页、实验及设置覆盖为鸿蒙候选。",
+    "键鼠14/20、行28、控件32/R6；阅读16/22、行32、控件36/R6；触屏16/24、行48、可见40、目标48/R8。",
+    "设置预览R12外框883×495、标题36、底栏64为方案覆盖；不是原Figma尺寸还原。",
+    "完整工作台复用Tree Lab的IJ主窗口结构及相邻assets/ij原图标，20或16固有图形不拉伸；布局为本项目组合。",
+    "文件树保留16/20，20箭头槽、20图标槽、4图文间距；每级缩进20。",
+    "原生fp/vp与CSSpx分开记录；字体缩放需真机验证。"
   ],
-  "attribution": "Int UI Kit Community / JetBrains 组件来源保留；研究整理与方案：钱佳丽。"
+  "attribution": "Int UI Kit Community / JetBrains 组件来源保留；研究整理与方案：钱佳丽。",
+  "version": "2.0",
+  "workbench_source": {
+    "node": "7070:138481",
+    "local_manifest": "../ide-tree-lab/assets/ij/manifest.json",
+    "assets": [
+      "68f8e.svg",
+      "1f5f9.svg",
+      "c0dc4.svg",
+      "3d8af.svg"
+    ]
+  }
 }

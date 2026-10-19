@@ -1,8 +1,8 @@
 window.RESEARCH = {
   "date": "2026-10-19",
   "author": "钱佳丽",
-  "version": "1.0",
-  "scope": "5 个当前产品 + Fleet 历史说明；其中 2 个体系有可追溯数字，未进行竞品本机实测。",
+  "version": "2.0",
+  "scope": "鸿蒙电脑：键鼠为主，兼顾触屏。6 个 IDE 对照；3 个体系有部分可追溯数值，未进行竞品本机实测。",
   "sources": [
     {
       "id": "S01",
@@ -87,6 +87,55 @@ window.RESEARCH = {
       "type": "历史状态",
       "url": "https://blog.jetbrains.com/fleet/2025/12/the-future-of-fleet/",
       "note": "Fleet 自 2025-12-22 起停止下载；文章 2026 年 5 月补充 Fleet 演进为 Air。本研究仅保留历史上下文。"
+    },
+    {
+      "id": "S13",
+      "title": "Zed · 默认设置与编辑器行距",
+      "type": "官方文档",
+      "url": "https://zed.dev/docs/reference/all-settings",
+      "note": "ui_font_size 默认16是全局尺度设置，buffer_font_size 默认15；不能据此把每个标签都写成16。源码普通标签的语义尺寸为14。"
+    },
+    {
+      "id": "S14",
+      "title": "Zed · 语义字号 / 按钮 / 间距",
+      "type": "固定源码",
+      "url": "https://github.com/zed-industries/zed/blob/56934ec0560bce8929025497411de7f5322fb6ca/crates/ui/src/components/button/button_like.rs#L455",
+      "note": "2026-10-17 主线56934ec：ButtonSize为18/22/28/32的紧凑至大型档位；默认尺度下普通标签14、小号12、大号16。默认密度下按钮内容gap4、默认左右padding4、中/大号padding8。具体调用方可覆盖。"
+    },
+    {
+      "id": "S15",
+      "title": "HarmonyOS · 鸿蒙电脑设计与输入",
+      "type": "官方平台说明",
+      "url": "https://developer.huawei.com/consumer/cn/multidevice/pc/get-started/",
+      "note": "电脑支持多窗口与多模态输入；应用需要按窗口、设备特征与业务安排布局。本文不提供统一的IDE字号数值。"
+    },
+    {
+      "id": "S16",
+      "title": "HarmonyOS · 点击热区检查规则（V5）",
+      "type": "历史跨端规则",
+      "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-v5/ide_touch-target-size-V5",
+      "note": "V5跨端规则给出主要交互热区推荐48vp×48vp、不得小于40vp×40vp。作为触屏增强参考，不冒称当前鸿蒙PC所有键鼠控件都必须48高。官方搜索索引正文可读，直接页面请求超时。"
+    },
+    {
+      "id": "S17",
+      "title": "HarmonyOS · 单位与PC文字适配",
+      "type": "官方平台说明",
+      "url": "https://developer.huawei.com/consumer/cn/doc/doccenter-dev-faq/faqs-computer-4",
+      "note": "2026-07-15官方PC问题说明提醒不要混用px与fp/vp，并考虑窗口适配。通过官方搜索索引正文读取，直接页面请求超时。"
+    },
+    {
+      "id": "S18",
+      "title": "HarmonyOS · Pixel Units",
+      "type": "官方API参考（V2）",
+      "url": "https://developer.huawei.com/consumer/en/doc/harmonyos-references-V2/ts-pixel-units-0000001478341189-V2",
+      "note": "vp随屏幕密度转换，fp还受系统字体大小影响；CSS px、原生pt与vp/fp不直接等同。官方搜索索引正文可读，直接页面请求超时。"
+    },
+    {
+      "id": "S19",
+      "title": "Zed · Appearance",
+      "type": "官方文档",
+      "url": "https://zed.dev/docs/appearance",
+      "note": "编辑器comfortable行距因子1.618；standard为1.3。15×1.618约24.27为逻辑计算值，实际栅格化及取整另行确认。"
     }
   ],
   "products": [
@@ -106,7 +155,8 @@ window.RESEARCH = {
         "S03",
         "S04"
       ],
-      "note": "官方字号文档、本次 Community 库及实际运行版本不是同一证据层。UI 默认 13 与库中 13/16 相符；编辑器参数不能套到菜单、表格。库的尺寸以设计逻辑单位记录，网页按 CSS px 实现。"
+      "note": "官方字号文档、本次 Community 库及实际运行版本不是同一证据层。UI 默认 13 与库中 13/16 相符；编辑器参数不能套到菜单、表格。库的尺寸以设计逻辑单位记录，网页按 CSS px 实现。",
+      "spacing": "按钮横12 / 纵6；组内12（所读弹窗）"
     },
     {
       "id": "vscode",
@@ -123,7 +173,26 @@ window.RESEARCH = {
         "S06",
         "S07"
       ],
-      "note": "取 2026-10-19 主线提交 f9444d6，而非某个已安装稳定版。18.2px 仅为 workbench 继承样式的计算值；具体控件有覆盖。¹26px=16+4×2+1×2，来自基础按钮样式，不代表所有按钮。编辑器取默认选项、EditorZoom=0。"
+      "note": "取 2026-10-19 主线提交 f9444d6，而非某个已安装稳定版。18.2px 仅为 workbench 继承样式的计算值；具体控件有覆盖。¹26px=16+4×2+1×2，来自基础按钮样式，不代表所有按钮。编辑器取默认选项、EditorZoom=0。",
+      "spacing": "基础按钮横8 / 纵4"
+    },
+    {
+      "id": "zed",
+      "name": "Zed",
+      "kind": "官方设置 + 固定源码",
+      "ui": "普通标签14；全局尺度设置16",
+      "line": "标签按上下文；未统一量化",
+      "editor": "默认15；comfortable×1.618 ≈24.27",
+      "row": "按调用组件；待测",
+      "control": "18 / 22 / 28 / 32 高度档位；圆角待核",
+      "spacing": "默认密度gap4；左右4或8",
+      "evidence": "quantified",
+      "refs": [
+        "S13",
+        "S14",
+        "S19"
+      ],
+      "note": "以2026-10-17主线56934ec为依据。普通Label映射TextSize::Default=14；ui_font_size=16是全局尺度设置，不等于所有标签为16。按钮档位在默认rem尺度下解释；图标、字号和padding可由调用方覆盖。圆角未完成调用链核对，不猜测。"
     },
     {
       "id": "cursor",
@@ -138,7 +207,8 @@ window.RESEARCH = {
       "refs": [
         "S08"
       ],
-      "note": "官方文档可确认字体可配置，未给出可靠默认值。Agents Window 与 IDE 要分开采样。共享生态和相似外观不能证明其尺寸等于 VS Code。"
+      "note": "官方文档可确认字体可配置，未给出可靠默认值。Agents Window 与 IDE 要分开采样。共享生态和相似外观不能证明其尺寸等于 VS Code。",
+      "spacing": "待测"
     },
     {
       "id": "trae",
@@ -153,7 +223,8 @@ window.RESEARCH = {
       "refs": [
         "S09"
       ],
-      "note": "官方文档可确认主题、字体、window 等设置入口，未公布尺寸。需分别采集编辑区、导航区及 AI 对话区；导入 VS Code / Cursor 设置后不应再叫“出厂默认值”。"
+      "note": "官方文档可确认主题、字体、window 等设置入口，未公布尺寸。需分别采集编辑区、导航区及 AI 对话区；导入 VS Code / Cursor 设置后不应再叫“出厂默认值”。",
+      "spacing": "待测"
     },
     {
       "id": "xcode",
@@ -169,7 +240,8 @@ window.RESEARCH = {
         "S10",
         "S11"
       ],
-      "note": "13pt 来自 Apple 平台指南，不是 Xcode 实测。原生 pt、网页 CSS px、截图物理像素不直接混比；同一显示器与缩放条件下再采集。"
+      "note": "13pt 来自 Apple 平台指南，不是 Xcode 实测。原生 pt、网页 CSS px、截图物理像素不直接混比；同一显示器与缩放条件下再采集。",
+      "spacing": "待测"
     }
   ],
   "components": [
@@ -236,5 +308,48 @@ window.RESEARCH = {
       "radius": "8",
       "detail": "此样本尺寸，非所有弹窗固定尺寸；标题区 33、底栏 57、描边 0.5、阴影 0 8 40 / 30%。"
     }
-  ]
+  ],
+  "recommendation": {
+    "context": "鸿蒙电脑，键鼠为主，兼顾触屏",
+    "status": "本研究候选方案，非鸿蒙官方IDE规范或统计最优值",
+    "default": {
+      "font_fp": 14,
+      "line_fp": 20,
+      "row_vp": 28,
+      "control_vp": 32,
+      "radius_vp": 6,
+      "action_gap_vp": 8
+    },
+    "reading": {
+      "font_fp": 16,
+      "line_fp": 22,
+      "row_vp": 32,
+      "control_vp": 36,
+      "radius_vp": 6,
+      "action_gap_vp": 8
+    },
+    "touch": {
+      "font_fp": 16,
+      "line_fp": 24,
+      "row_vp": 48,
+      "control_visible_vp": 40,
+      "target_vp": 48,
+      "radius_vp": 8,
+      "action_gap_vp": 12
+    },
+    "roles": {
+      "hint": "12/16 fp",
+      "code": "14/22 fp，可独立调节",
+      "ai_prose": "16/24 fp",
+      "file_tree": "保留项目16/20文字、28vp行、20vp图标槽与4vp图文间距；触屏选项另行放大"
+    },
+    "spacing_vp": [
+      4,
+      8,
+      12,
+      16,
+      24
+    ],
+    "popup_radius_vp": 12
+  }
 };

@@ -152,8 +152,8 @@ GitHub 用于保存与共享 Skill 文件，实际分析在 Codex 中运行；�
 **根目录的 `.nojekyll` 不要删。** GitHub Pages 默认会跑 Jekyll 构建，Jekyll 会把名字以下划线开头的目录整个跳过不发布——`demos/_shared/`（所有 demo 共用的 `frame.js` / `frame.css`）正好是这种目录。少了 `.nojekyll`，线上每个 demo 都会因为 `DemoFrame` 未定义而白屏（本地 `file://` 打开不受影响，只有真正发布到 Pages 才会踩到，所以容易漏测）。
 
 
-## IDE 字号与组件尺度研究 · 钱佳丽
+## 鸿蒙电脑 IDE 尺度研究 · 钱佳丽
 
-[交互研究](analysis/ide-typography-components/index.html) · [完整材料](analysis/ide-typography-components/RESEARCH.md) · [IJ 页面还原](analysis/ide-typography-components/index.html#ide)
+[交互研究](analysis/ide-typography-components/index.html) · [完整材料](analysis/ide-typography-components/RESEARCH.md) · [完整IDE预览](analysis/ide-typography-components/index.html#ide)
 
-2026-10-19：比较 IntelliJ IDEA、VS Code、Cursor、TRAE 与 Xcode，提供字号、文字行高、组件高度和圆角的证据对照。包含 IJ 组件拆解、可调密度实验、设置界面图和 CSV / CSS 导出。规范、源码计算值与设计建议分别标注，未确认数据保留待测。已收录启动页「分析与研究」。
+2026-10-19 v2：面向键鼠为主、兼顾触屏的鸿蒙电脑IDE。比较IJ、VS Code、Zed、Cursor、TRAE、Xcode，推导字号、行高、控件、圆角、间距与热区。IJ仅为展示组件来源；推荐为待验证候选，未测数据保留空缺。已收录「分析与研究」。

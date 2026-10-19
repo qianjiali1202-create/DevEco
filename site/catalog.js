@@ -363,17 +363,17 @@ window.DEVECO_CATALOG = {
       note: '对内汇报与对外协同共用的事实基础：以开发者证据推动方案，不以设计观点推动方案。',
       items: [
         {
-          title: 'IDE 字号、行高与组件尺度研究',
+          title: '鸿蒙电脑 IDE：字号、密度与组件尺度研究',
           author: '钱佳丽', subtitle: 'Typography & Components · UX Research',
-          desc: '钱佳丽：分析 IntelliJ IDEA、VS Code、Cursor、TRAE 与 Xcode 的字号、行高和组件尺度，区分官方规范、固定源码与待测数据。包含 IJ 组件尺寸拆解、13/16 · 14/20 · 16/24 密度实验、设置界面还原与完整研究下载。',
+          desc: '钱佳丽：面向键鼠为主、兼顾触屏的鸿蒙电脑IDE。比较IJ、VS Code、Zed、Cursor、TRAE与Xcode，推导字体、行高、控件、圆角、间距和点击目标。包含完整IDE预览，IJ仅为展示组件来源。',
           view: 'ready', date: '2026-10-19', href: 'analysis/ide-typography-components/index.html',
           links: [
             { label: '竞品对照', href: 'analysis/ide-typography-components/index.html#compare' },
-            { label: '页面还原', href: 'analysis/ide-typography-components/index.html#ide' },
+            { label: '鸿蒙IDE预览', href: 'analysis/ide-typography-components/index.html#ide' },
             { label: '研究材料', href: 'analysis/ide-typography-components/RESEARCH.md' },
           ],
           tags: ['钱佳丽', 'IDE', '字号', '行高', '圆角', '组件', 'Int UI Kit'],
-          thumb: { type: 'image', src: 'analysis/ide-typography-components/assets/settings-preview.png' },
+          thumb: { type: 'image', src: 'analysis/ide-typography-components/assets/harmony-ide.png' },
         },
         {
           title: 'IDE 文件树体验研究：间距、缩进与信息密度',
