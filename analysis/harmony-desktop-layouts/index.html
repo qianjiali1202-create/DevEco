@@ -25,9 +25,10 @@
         <a href="#patterns"><span>02</span>布局模式图谱</a>
         <a href="#comparison"><span>03</span>市场案例对照</a>
         <a href="#lab"><span>04</span>尺寸实验器</a>
-        <a href="#responsive"><span>05</span>窗口响应策略</a>
-        <a href="#guidelines"><span>06</span>设计检查清单</a>
-        <a href="#sources"><span>07</span>来源与边界</a>
+        <a href="#stretch"><span>05</span>拉伸适配规则</a>
+        <a href="#responsive"><span>06</span>窗口响应策略</a>
+        <a href="#guidelines"><span>07</span>设计检查清单</a>
+        <a href="#sources"><span>08</span>来源与边界</a>
       </nav>
       <div class="side-block">
         <p class="side-heading">默认设计基准</p>
@@ -94,7 +95,7 @@
       </section>
 
       <section id="lab" class="chapter">
-        <div class="section-intro"><span class="kicker">INTERACTIVE LAB</span><h2>布局尺寸实验器</h2><p>选择一个布局类型和窗口预设，或直接输入尺寸。预览按比例缩放，标注始终显示逻辑 px；交付时布局映射为 vp、文字映射为 fp。</p></div>
+        <div class="section-intro"><span class="kicker">INTERACTIVE LAB</span><h2>布局尺寸与拉伸实验器</h2><p>选择预设、输入尺寸，或直接拖动预览中的窗口右下角与面板分隔线。预览按比例缩放，标注始终显示逻辑 px；交付时布局映射为 vp、文字映射为 fp。</p></div>
         <div class="lab-shell">
           <form class="lab-controls sheet" id="layoutForm">
             <div class="sheet-head"><strong>窗口与面板</strong><button class="button" type="button" id="resetLayout">恢复推荐</button></div>
@@ -103,6 +104,7 @@
             <div class="control-grid">
               <label>窗口宽<input class="input short" id="windowWidth" type="number" min="800" max="2560" step="4"></label>
               <label>窗口高<input class="input short" id="windowHeight" type="number" min="600" max="1600" step="4"></label>
+              <label class="toggle-row">按断点自动折叠<input id="autoAdapt" type="checkbox" checked aria-label="窗口变窄时按断点自动折叠辅助面板"></label>
               <label class="toggle-row">应用顶部区<input id="topEnabled" type="checkbox" aria-label="显示应用级导航或命令区"></label>
               <label>顶部区高度<input class="input short" id="topHeight" type="number" min="0" max="96" step="4"></label>
               <label>目录列<input class="input short" id="leftWidth" type="number" min="0" max="480" step="4"></label>
@@ -120,11 +122,32 @@
                 <div class="lf-main"><strong>主内容</strong><div class="content-lines"><i></i><i></i><i></i><i></i></div></div>
                 <div class="lf-right"><strong>其他 / 属性</strong><span>上下文信息</span><span>辅助操作</span></div>
                 <div class="lf-bottom"><strong>底部区域</strong><span>日志、终端或时间线</span></div>
+                <button class="resize-handle resize-left" type="button" data-resize="left" aria-label="拖动调整目录列宽度" title="拖动调整目录列"></button>
+                <button class="resize-handle resize-right" type="button" data-resize="right" aria-label="拖动调整辅助列宽度" title="拖动调整辅助列"></button>
+                <button class="resize-handle resize-bottom" type="button" data-resize="bottom" aria-label="拖动调整底部区域高度" title="拖动调整底部区域"></button>
+                <button class="resize-window" type="button" data-resize="window" aria-label="拖动调整整个窗口尺寸" title="拖动调整窗口宽高"></button>
               </div>
             </div>
             <div class="layout-result" id="layoutResult"></div>
+            <p class="resize-help" id="resizeStatus" aria-live="polite">拖动蓝色分隔线调整面板；拖动窗口右下角调整整体尺寸。</p>
           </div>
         </div>
+      </section>
+
+      <section id="stretch" class="chapter">
+        <div class="section-intro"><span class="kicker">STRETCH & RESIZE</span><h2>整体窗口与三列面板如何拉伸</h2><p>窗口尺寸变化时，中间主内容负责吸收大部分增量；左右面板保持可用宽度，并在空间不足时按优先级折叠。用户主动拖动分隔线时，再保存个人宽度。</p></div>
+        <div class="stretch-demo sheet" aria-label="左中右面板拉伸关系">
+          <div class="stretch-left"><strong>左侧目录</strong><span>240 · 200–320</span><small>默认保持宽度</small></div>
+          <div class="stretch-main"><strong>中间主内容</strong><span>flex · ≥640</span><small>优先吸收窗口增量</small></div>
+          <div class="stretch-right"><strong>右侧辅助</strong><span>320 · 280–420</span><small>空间不足先折叠</small></div>
+        </div>
+        <div class="adapt-grid">
+          <article class="sheet"><div class="sheet-head"><strong>整体窗口</strong><span class="tag">可拉伸</span></div><p>宽高在自由窗口中连续变化。设计稿不要等比缩放控件，而是重新分配可用空间；实验器验证范围为 800×600 至 2560×1600。</p></article>
+          <article class="sheet"><div class="sheet-head"><strong>左侧面板</strong><span class="tag">稳定定位</span></div><p>推荐 240，常用范围 200–320。窗口变宽时不自动同比放大；低于 960 时折叠为抽屉或图标入口。</p></article>
+          <article class="sheet"><div class="sheet-head"><strong>中间主内容</strong><span class="tag">弹性区域</span></div><p>使用剩余空间，建议保持至少 640。窗口增量优先分给主内容；低于最小值时触发面板折叠，而不是继续压窄。</p></article>
+          <article class="sheet"><div class="sheet-head"><strong>右侧面板</strong><span class="tag">上下文辅助</span></div><p>推荐 320，常用范围 280–420。低于 1280 时优先折叠为抽屉；再次展开时恢复用户上次宽度。</p></article>
+        </div>
+        <div class="note"><strong>拖动约束</strong><span>拖动左右分隔线时，始终为主内容预留 640；拖动底部面板时，为主体预留 480。侧栏达到边界后停止，不继续挤压主任务。</span></div>
       </section>
 
       <section id="responsive" class="chapter">
@@ -154,7 +177,7 @@
         <div class="downloads"><a class="button primary" href="RESEARCH.md" download>下载研究材料</a><a class="button" href="layout-tokens.json" download>下载布局参数</a></div>
       </section>
 
-      <footer class="page-footer"><span>钱佳丽 · Harmony Desktop Layouts</span><span>研究 v1.1 / 2026.10.20</span><a href="../../index.html#analysis">返回研究分类</a></footer>
+      <footer class="page-footer"><span>钱佳丽 · Harmony Desktop Layouts</span><span>研究 v1.2 / 2026.10.20</span><a href="../../index.html#analysis">返回研究分类</a></footer>
     </main>
   </div>
   <script src="data.js"></script>

@@ -24,5 +24,12 @@
     {"min_width": 1280, "max_width": 1599, "mode": "目录与主内容常驻，一个辅助区按需展示"},
     {"min_width": 960, "max_width": 1279, "mode": "目录可压缩，辅助区改为抽屉或覆盖"},
     {"max_width": 959, "mode": "单区切换，保留主任务"}
-  ]
+  ],
+  "resize_behavior": {
+    "window": {"min": "800 × 600", "max_test": "2560 × 1600", "behavior": "continuous"},
+    "directory": {"behavior": "user_resizable_then_fixed", "collapse_below": 960},
+    "main_content": {"behavior": "flex", "absorbs_window_delta": true, "min": 640},
+    "auxiliary": {"behavior": "user_resizable_then_fixed", "collapse_below": 1280, "restore_previous_width": true},
+    "bottom_panel": {"behavior": "user_resizable", "body_min_height": 480}
+  }
 }

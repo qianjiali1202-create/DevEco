@@ -13,3 +13,23 @@
 .toggle-row input{width:16px;height:16px;accent-color:var(--layout-blue)}
 .control-grid input:disabled{opacity:.45;cursor:not-allowed}
 .layout-frame [hidden]{display:none!important}
+
+.layout-frame{position:relative}
+.resize-handle,.resize-window{position:absolute;z-index:8;border:0;border-radius:0;padding:0;background:transparent;opacity:.45;transition:opacity .15s,background-color .15s}
+.resize-handle:hover,.resize-handle:focus-visible,.resize-window:hover,.resize-window:focus-visible{opacity:1;outline:0}
+.resize-left,.resize-right{top:calc(var(--th)*1px);bottom:calc(var(--bh)*1px);width:12px;cursor:col-resize;background:linear-gradient(90deg,transparent 5px,var(--layout-blue) 5px,var(--layout-blue) 7px,transparent 7px)}
+.resize-left{left:calc(var(--lw)*1px - 6px)}
+.resize-right{right:calc(var(--rw)*1px - 6px)}
+.resize-bottom{left:0;right:0;bottom:calc(var(--bh)*1px - 6px);height:12px;cursor:row-resize;background:linear-gradient(transparent 5px,var(--layout-blue) 5px,var(--layout-blue) 7px,transparent 7px)}
+.resize-window{right:0;bottom:0;width:28px;height:28px;cursor:nwse-resize;background:linear-gradient(135deg,transparent 0,transparent 48%,#fff 48%,#fff 55%,var(--layout-blue) 55%,var(--layout-blue) 63%,transparent 63%,transparent 70%,var(--layout-blue) 70%,var(--layout-blue) 78%,transparent 78%)}
+.resize-help{border-top:1px solid var(--layout-line);padding:9px 16px;font-size:11px;line-height:18px;color:var(--layout-muted)}
+.stretch-demo{display:grid;grid-template-columns:240px minmax(0,1fr) 320px;min-height:160px;margin-bottom:20px;overflow:hidden}
+.stretch-demo>div{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:24px;text-align:center}
+.stretch-demo span{font-size:14px;font-variant-numeric:tabular-nums}.stretch-demo small{font-size:11px;color:var(--layout-muted)}
+.stretch-left,.stretch-right{background:#f7f8fa}.stretch-left{border-right:1px solid var(--layout-line)}.stretch-right{border-left:1px solid var(--layout-line)}
+.stretch-main{background:#fff}.stretch-main:after{content:"← 窗口增量 →";margin-top:8px;color:var(--layout-blue);font-size:11px}
+.adapt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:20px}
+.adapt-grid article p{padding:16px;font-size:12px;line-height:20px;color:var(--layout-muted)}
+.adapt-grid .tag{font-size:10px;line-height:16px;color:#2158bc;background:#edf3ff;border-radius:3px;padding:1px 6px}
+@media(max-width:900px){.stretch-demo{grid-template-columns:180px minmax(0,1fr) 220px}}
+@media(max-width:640px){.stretch-demo{grid-template-columns:88px minmax(0,1fr)}.stretch-right{display:none}.stretch-demo>div{padding:14px 8px}.adapt-grid{grid-template-columns:1fr}}
