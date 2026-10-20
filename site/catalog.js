@@ -365,7 +365,7 @@ window.DEVECO_CATALOG = {
         {
           title: '鸿蒙电脑原生应用布局研究：窗口结构与多列工作区',
           author: '钱佳丽', subtitle: 'Desktop Layout Atlas · Responsive Window Lab',
-          desc: '钱佳丽：整理8类主流桌面布局，把内容列结构与应用顶部区拆成独立维度；以1440×960为主画板，可拖动整体窗口与左右面板，并模拟断点折叠和宽度恢复。',
+          desc: '钱佳丽：分析MateBook 14、MateBook Pro和MateBook Fold的屏幕尺寸、物理分辨率与候选逻辑画板；整理8类布局，可拖动整体窗口与左右面板并模拟断点折叠。',
           view: 'ready', date: '2026-10-20', href: 'analysis/harmony-desktop-layouts/index.html',
           links: [
             { label: '布局图谱', href: 'analysis/harmony-desktop-layouts/index.html#patterns' },

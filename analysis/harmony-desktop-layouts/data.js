@@ -19,8 +19,8 @@ window.LAYOUT_RESEARCH = {
   ],
   sources: [
     {id:'S01',title:'鸿蒙电脑应用开发入门',org:'华为开发者联盟',note:'确认全屏、分屏、自由多窗、悬浮窗以及响应式布局要求。',url:'https://developer.huawei.com/consumer/cn/multidevice/pc/get-started/'},
-    {id:'S02',title:'HUAWEI MateBook Pro S 规格参数',org:'华为消费者业务',note:'14.2英寸、3120×2080、3:2、264ppi与十点触控。',url:'https://consumer.huawei.com/cn/harmonyos-computer/matebook-pro-s/specs/'},
-    {id:'S03',title:'HUAWEI MateBook Fold 规格参数',org:'华为消费者业务',note:'展开3296×2472 4:3；半屏2472×1648 3:2。',url:'https://consumer.huawei.com/cn/harmonyos-computer/matebook-fold-ultimate-design/specs/'},
+    {id:'S02',title:'HUAWEI MateBook Pro 规格参数',org:'华为消费者业务',note:'14.2英寸、3120×2080、3:2与十点触控；约算264ppi。',url:'https://consumer.huawei.com/cn/harmonyos-computer/matebook-pro/specs/'},
+    {id:'S03',title:'HUAWEI MateBook Fold 规格参数',org:'华为消费者业务',note:'18英寸展开态3296×2472、4:3；13英寸半屏2472×1648、3:2；约算229ppi。',url:'https://consumer.huawei.com/cn/harmonyos-computer/matebook-fold-ultimate-design/specs/'},
     {id:'S04',title:'Visual Studio Code User Interface',org:'Microsoft',note:'官方描述六个工作区及主副侧栏、面板的显示和移动。',url:'https://code.visualstudio.com/docs/editing/getting-started/userinterface'},
     {id:'S05',title:'IntelliJ IDEA Tool Windows',org:'JetBrains',note:'官方描述工具窗停靠、隐藏、重排和分离。',url:'https://www.jetbrains.com/help/idea/tool-windows.html'},
     {id:'S06',title:'Configuring the Xcode project window',org:'Apple',note:'官方定义toolbar、navigator、editor、inspector和debug area。',url:'https://developer.apple.com/documentation/xcode/configuring-the-xcode-project-window'},
@@ -28,7 +28,8 @@ window.LAYOUT_RESEARCH = {
     {id:'S08',title:'NavigationSplitView',org:'Apple Developer',note:'两列或三列选择关系，以及窄尺寸折叠为单栈。',url:'https://developer.apple.com/documentation/swiftui/navigationsplitview'},
     {id:'S09',title:'NavigationView',org:'Microsoft Learn',note:'顶部 / 左侧导航及按窗口宽度切换显示模式。',url:'https://learn.microsoft.com/windows/apps/develop/ui/controls/navigationview'},
     {id:'S10',title:'HarmonyOS 设计资源',org:'华为开发者联盟',note:'提供手机、折叠屏、平板和电脑设计组件与模板。',url:'https://developer.huawei.com/consumer/cn/design/resource/'},
-    {id:'S11',title:'Int UI Kit Community',org:'JetBrains Community',note:'本研究网页按钮、输入、页签和表格的展示组件来源。',url:'https://www.figma.com/design/3q89XhaMGImDOPJwvfEpd7/Int-UI-Kit--Community-'}
+    {id:'S11',title:'Int UI Kit Community',org:'JetBrains Community',note:'本研究网页按钮、输入、页签和表格的展示组件来源。',url:'https://www.figma.com/design/3q89XhaMGImDOPJwvfEpd7/Int-UI-Kit--Community-'},
+    {id:'S12',title:'HUAWEI MateBook 14',org:'华为消费者业务',note:'14.2英寸、2880×1920、3:2；约算244ppi。',url:'https://consumer.huawei.com/cn/harmonyos-computer/matebook-14-harmonyos-version/'}
   ],
   presets: [
     {id:'compact',name:'紧凑',width:1236,height:824},

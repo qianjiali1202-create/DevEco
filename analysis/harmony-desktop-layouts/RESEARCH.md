@@ -1,7 +1,7 @@
 # 鸿蒙电脑原生应用布局研究
 
 研究与方案设计：钱佳丽  
-版本：1.2 · 2026-10-20
+版本：1.3 · 2026-10-20
 
 ## 结论
 
@@ -20,6 +20,19 @@
 | 外接屏 | 1920×1080 | 外接显示器和横向扩展验证 |
 
 这些是设计验证画板，不代表系统固定或默认缩放值。
+
+## 鸿蒙电脑屏幕尺寸与分辨率
+
+| 设备 / 姿态 | 官方屏幕参数 | 约算像素密度 | 2×候选逻辑尺寸 | 设计角色 |
+|---|---|---:|---:|---|
+| HUAWEI MateBook 14 | 14.2英寸、2880×1920、3:2 | 约244ppi | 1440×960 | 主设计画板 |
+| HUAWEI MateBook Pro | 14.2英寸、3120×2080、3:2 | 约264ppi | 1560×1040 | 更宽标准窗口 |
+| HUAWEI MateBook Fold 半屏 | 13英寸、2472×1648、3:2 | 约229ppi | 1236×824 | 紧凑压力测试 |
+| HUAWEI MateBook Fold 展开 | 18英寸、3296×2472、4:3 | 约229ppi | 1648×1236 | 大画布与并行面板 |
+
+像素密度由官方尺寸与分辨率约算。2×候选逻辑尺寸用于建立一致的设计映射，不表示 HarmonyOS 官方默认显示缩放。应用实际可用区域还会受系统区域、窗口装饰、分屏比例、自由窗口尺寸和用户显示设置影响。
+
+从这组设备可以得出三点：3:2适合作为主基线；Fold展开的4:3应增加并行信息或纵向工具区，而不是等比放大页面；物理分辨率主要用于判断资源清晰度，布局仍应以逻辑vp和可变窗口组织。
 
 ## 推荐区域尺寸
 
@@ -92,7 +105,7 @@
 ## 来源
 
 1. 华为开发者联盟：[鸿蒙电脑应用开发入门](https://developer.huawei.com/consumer/cn/multidevice/pc/get-started/)
-2. 华为消费者业务：[MateBook Pro S 规格](https://consumer.huawei.com/cn/harmonyos-computer/matebook-pro-s/specs/)
+2. 华为消费者业务：[MateBook Pro 规格](https://consumer.huawei.com/cn/harmonyos-computer/matebook-pro/specs/)
 3. 华为消费者业务：[MateBook Fold 规格](https://consumer.huawei.com/cn/harmonyos-computer/matebook-fold-ultimate-design/specs/)
 4. Microsoft：[Visual Studio Code User Interface](https://code.visualstudio.com/docs/editing/getting-started/userinterface)
 5. JetBrains：[IntelliJ IDEA Tool Windows](https://www.jetbrains.com/help/idea/tool-windows.html)
@@ -102,6 +115,7 @@
 9. Microsoft Learn：[NavigationView](https://learn.microsoft.com/windows/apps/develop/ui/controls/navigationview)
 10. Huawei：[HarmonyOS 设计资源](https://developer.huawei.com/consumer/cn/design/resource/)
 11. JetBrains Community：[Int UI Kit Community](https://www.figma.com/design/3q89XhaMGImDOPJwvfEpd7/Int-UI-Kit--Community-)
+12. 华为消费者业务：[HUAWEI MateBook 14](https://consumer.huawei.com/cn/harmonyos-computer/matebook-14-harmonyos-version/)
 
 ## 边界
 

@@ -11,6 +11,13 @@
     "fold_expanded": "1648 × 1236",
     "external": "1920 × 1080"
   },
+  "device_resolution_analysis": [
+    {"device": "HUAWEI MateBook 14", "screen_inches": 14.2, "aspect_ratio": "3:2", "physical_px": "2880 × 1920", "approx_ppi": 244, "candidate_logical_px": "1440 × 960"},
+    {"device": "HUAWEI MateBook Pro", "screen_inches": 14.2, "aspect_ratio": "3:2", "physical_px": "3120 × 2080", "approx_ppi": 264, "candidate_logical_px": "1560 × 1040"},
+    {"device": "HUAWEI MateBook Fold 半屏", "screen_inches": 13, "aspect_ratio": "3:2", "physical_px": "2472 × 1648", "approx_ppi": 229, "candidate_logical_px": "1236 × 824"},
+    {"device": "HUAWEI MateBook Fold 展开", "screen_inches": 18, "aspect_ratio": "4:3", "physical_px": "3296 × 2472", "approx_ppi": 229, "candidate_logical_px": "1648 × 1236"}
+  ],
+  "resolution_mapping_note": "2×候选逻辑映射用于设计验证，不代表HarmonyOS官方默认显示缩放",
   "regions": {
     "application_top_region": {"optional": true, "default": 0, "when_used": 48, "range": "40–48 vp", "note": "与内容列数独立；系统窗口框架不计入"},
     "directory": {"default": 240, "range": "200–320 vp"},

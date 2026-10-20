@@ -22,13 +22,14 @@
       <p class="side-heading">研究目录</p>
       <nav>
         <a href="#overview" aria-current="page"><span>01</span>选择设计尺寸</a>
-        <a href="#patterns"><span>02</span>布局模式图谱</a>
-        <a href="#comparison"><span>03</span>市场案例对照</a>
-        <a href="#lab"><span>04</span>尺寸实验器</a>
-        <a href="#stretch"><span>05</span>拉伸适配规则</a>
-        <a href="#responsive"><span>06</span>窗口响应策略</a>
-        <a href="#guidelines"><span>07</span>设计检查清单</a>
-        <a href="#sources"><span>08</span>来源与边界</a>
+        <a href="#resolution"><span>02</span>设备尺寸与分辨率</a>
+        <a href="#patterns"><span>03</span>布局模式图谱</a>
+        <a href="#comparison"><span>04</span>市场案例对照</a>
+        <a href="#lab"><span>05</span>尺寸实验器</a>
+        <a href="#stretch"><span>06</span>拉伸适配规则</a>
+        <a href="#responsive"><span>07</span>窗口响应策略</a>
+        <a href="#guidelines"><span>08</span>设计检查清单</a>
+        <a href="#sources"><span>09</span>来源与边界</a>
       </nav>
       <div class="side-block">
         <p class="side-heading">默认设计基准</p>
@@ -76,6 +77,30 @@
             <p><strong>主内容</strong><span>获得剩余空间，是布局中唯一必须持续伸缩的区域。</span></p>
             <p><strong>辅助列</strong><span>默认 320 vp，可调范围 280–420；窗口变窄时优先折叠。</span></p>
           </div>
+        </div>
+      </section>
+
+      <section id="resolution" class="chapter">
+        <div class="section-intro"><span class="kicker">DEVICE RESOLUTION</span><h2>鸿蒙电脑尺寸与分辨率分析</h2><p>物理分辨率决定屏幕像素密度和资源清晰度，不能直接当作应用设计画板。以下先记录官方设备参数，再用统一的 2× 候选映射换算逻辑设计尺寸。</p></div>
+        <div class="resolution-flow sheet" aria-label="从物理分辨率到应用窗口的换算关系">
+          <div><span>设备物理像素</span><strong>2880 × 1920</strong><small>屏幕硬件规格</small></div><i>÷ 2</i><div><span>候选逻辑画板</span><strong>1440 × 960</strong><small>设计 px → 开发 vp</small></div><i>→</i><div><span>真实应用窗口</span><strong>连续变化</strong><small>全屏 / 分屏 / 自由窗口</small></div>
+        </div>
+        <div class="table-scroll">
+          <table class="research-table resolution-table">
+            <thead><tr><th>设备 / 姿态</th><th>官方屏幕参数</th><th>约算像素密度</th><th>2× 候选逻辑尺寸</th><th>设计验证角色</th></tr></thead>
+            <tbody>
+              <tr><td><strong>MateBook 14</strong><span class="evidence">14.2 英寸 · 3:2</span></td><td>2880 × 1920<a class="source-pill" href="https://consumer.huawei.com/cn/harmonyos-computer/matebook-14-harmonyos-version/" target="_blank" rel="noreferrer">[S12] 官方来源 ↗</a></td><td>约 244 ppi</td><td><strong>1440 × 960</strong></td><td>主设计画板</td></tr>
+              <tr><td><strong>MateBook Pro</strong><span class="evidence">14.2 英寸 · 3:2</span></td><td>3120 × 2080<a class="source-pill" href="https://consumer.huawei.com/cn/harmonyos-computer/matebook-pro/specs/" target="_blank" rel="noreferrer">[S02] 官方来源 ↗</a></td><td>约 264 ppi</td><td><strong>1560 × 1040</strong></td><td>更宽标准窗口</td></tr>
+              <tr><td><strong>MateBook Fold 半屏</strong><span class="evidence">13 英寸 · 3:2</span></td><td>2472 × 1648<a class="source-pill" href="https://consumer.huawei.com/cn/harmonyos-computer/matebook-fold-ultimate-design/specs/" target="_blank" rel="noreferrer">[S03] 官方来源 ↗</a></td><td>约 229 ppi</td><td><strong>1236 × 824</strong></td><td>紧凑压力测试</td></tr>
+              <tr><td><strong>MateBook Fold 展开</strong><span class="evidence">18 英寸 · 4:3</span></td><td>3296 × 2472<a class="source-pill" href="https://consumer.huawei.com/cn/harmonyos-computer/matebook-fold-ultimate-design/specs/" target="_blank" rel="noreferrer">[S03] 官方来源 ↗</a></td><td>约 229 ppi</td><td><strong>1648 × 1236</strong></td><td>大画布与并行面板</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="resolution-caveat"><strong>换算边界：</strong>“÷2”是为了建立一致设计基准的候选映射，不是对 HarmonyOS 默认显示缩放的官方描述。应用窗口还会受系统区域、窗口装饰、分屏比例和用户显示设置影响，因此交付必须继续验证可变窗口。</p>
+        <div class="resolution-findings">
+          <article><span>01</span><h3>3:2 是主基线</h3><p>三款常用姿态都是 3:2，1440×960 适合承担主画板；它代表逻辑工作区，不代表一台设备的全屏截图。</p></article>
+          <article><span>02</span><h3>4:3 用来增加并行信息</h3><p>Fold 展开态多出的高度适合日志、预览和上下文，而不是把原页面整体放大。</p></article>
+          <article><span>03</span><h3>物理像素用于资源质量</h3><p>位图与屏幕适配需要关注 229–264 ppi；布局尺寸、间距和控件仍以逻辑 vp 组织。</p></article>
         </div>
       </section>
 
@@ -177,7 +202,7 @@
         <div class="downloads"><a class="button primary" href="RESEARCH.md" download>下载研究材料</a><a class="button" href="layout-tokens.json" download>下载布局参数</a></div>
       </section>
 
-      <footer class="page-footer"><span>钱佳丽 · Harmony Desktop Layouts</span><span>研究 v1.2 / 2026.10.20</span><a href="../../index.html#analysis">返回研究分类</a></footer>
+      <footer class="page-footer"><span>钱佳丽 · Harmony Desktop Layouts</span><span>研究 v1.3 / 2026.10.20</span><a href="../../index.html#analysis">返回研究分类</a></footer>
     </main>
   </div>
   <script src="data.js"></script>
