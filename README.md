@@ -11,7 +11,7 @@
 
 ## 新增研究 · 钱佳丽
 
-[鸿蒙电脑原生应用布局研究](analysis/harmony-desktop-layouts/index.html)整理了顶部栏、左侧导航、列表详情、三列工作区、IDE、画布、看板和设置等 8 类主流桌面布局；以 1440×960 为主画板，提供可自定义窗口与面板尺寸的[布局实验器](analysis/harmony-desktop-layouts/index.html#lab)及[完整研究材料](analysis/harmony-desktop-layouts/RESEARCH.md)。
+[鸿蒙电脑原生应用布局研究](analysis/harmony-desktop-layouts/index.html)整理了顶部导航、左侧导航、列表详情、三列工作区、IDE、画布、看板和设置等 8 类主流桌面布局，并将“内容列结构”与“是否需要应用顶部区”作为独立维度；以 1440×960 为主画板，提供可自定义窗口与面板尺寸的[布局实验器](analysis/harmony-desktop-layouts/index.html#lab)及[完整研究材料](analysis/harmony-desktop-layouts/RESEARCH.md)。
 
 [IDE 文件树体验研究](analysis/ide-tree-lab/index.html)已收录在启动页「分析与研究」。包含竞品对照、20 / 20 / 16 参数方案、4px 图文间距、IDE 交互效果及截图；[研究材料](analysis/ide-tree-lab/RESEARCH.md)署名钱佳丽。原仓库其他材料保留原作者归属，原启动页见 [Cinnnnnnndy / DevEco](https://cinnnnnnndy.github.io/DevEco/)。
 

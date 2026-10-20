@@ -1,13 +1,13 @@
 window.LAYOUT_RESEARCH = {
   patterns: [
-    {id:'top',name:'顶部栏 + 内容',tag:'轻量导航',examples:'浏览器、媒体、轻量工具',use:'一级模块不超过约 5 个，内容需要最大横向空间。',risk:'功能增长后顶部容易拥挤；层级深时定位感不足。'},
-    {id:'left',name:'左侧导航 + 内容',tag:'模块型应用',examples:'设置、管理后台、知识工具',use:'模块较多、需要稳定位置或存在二级导航。',risk:'窄窗口占用主内容；需要折叠、覆盖或图标模式。'},
-    {id:'list',name:'目录 + 列表 + 详情',tag:'选择链',examples:'邮件、文件、联系人',use:'选择目录影响列表，选择列表影响详情；需要频繁切换对象。',risk:'三个区域都有最小宽度，紧凑窗口必须逐级收起。'},
-    {id:'three',name:'目录 + 内容 + 其他',tag:'三列工作区',examples:'Xcode、IDE、文档工具',use:'目录用于定位，主内容用于完成任务，右侧展示属性、AI或上下文。',risk:'辅助列不能和主内容争夺空间；必须支持隐藏和调整宽度。'},
-    {id:'workbench',name:'IDE 工作台',tag:'多面板',examples:'VS Code、IntelliJ IDEA、DevEco',use:'文件、编辑器、调试、终端和AI需要并行但可按任务重排。',risk:'区域数量最多；固定展示所有面板会迅速压垮编辑区。'},
-    {id:'canvas',name:'画布 + 双侧面板',tag:'创作工具',examples:'Figma、图片与视频编辑器',use:'画布是主对象；左侧管理层级和资源，右侧修改选中对象属性。',risk:'画布应持续最大化；无选中对象时右侧应降噪或自动收起。'},
-    {id:'dashboard',name:'顶部栏 + 卡片网格',tag:'概览型',examples:'数据看板、启动页、应用市场',use:'用户先扫描多组并列信息，再进入单一模块。',risk:'卡片数量不能代替信息架构；窗口变化需要改列数而非缩小卡片。'},
-    {id:'settings',name:'设置目录 + 单列内容',tag:'配置型',examples:'系统设置、应用偏好',use:'左侧用于分类，右侧从上到下完成配置；内容保持可读最大宽度。',risk:'内容区过宽会降低扫描效率；相关设置需要成组。'}
+    {id:'top',name:'顶部导航 + 内容',tag:'轻量导航',top:'shown',examples:'浏览器、媒体、轻量工具',use:'一级模块不超过约 5 个，且应用确实需要全局顶部导航。',risk:'功能增长后顶部容易拥挤；层级深时定位感不足。'},
+    {id:'left',name:'左侧导航 + 内容',tag:'模块型应用',top:'hidden',examples:'设置、管理后台、知识工具',use:'模块较多、需要稳定位置或存在二级导航；应用顶部区按命令需要选择。',risk:'窄窗口占用主内容；需要折叠、覆盖或图标模式。'},
+    {id:'list',name:'目录 + 列表 + 详情',tag:'选择链',top:'hidden',examples:'邮件、文件、联系人',use:'选择目录影响列表，选择列表影响详情；顶部命令可放在各列内部。',risk:'三个区域都有最小宽度，紧凑窗口必须逐级收起。'},
+    {id:'three',name:'目录 + 内容 + 其他',tag:'三列工作区',top:'hidden',examples:'Xcode、IDE、文档工具',use:'目录用于定位，主内容用于完成任务，右侧展示属性、AI或上下文；顶部区独立判断。',risk:'辅助列不能和主内容争夺空间；必须支持隐藏和调整宽度。'},
+    {id:'workbench',name:'IDE 工作台',tag:'多面板',top:'shown',examples:'VS Code、IntelliJ IDEA、DevEco',use:'文件、编辑器、调试、终端和AI需要并行；顶部命令区可随产品结构保留或精简。',risk:'区域数量最多；固定展示所有面板会迅速压垮编辑区。'},
+    {id:'canvas',name:'画布 + 双侧面板',tag:'创作工具',top:'hidden',examples:'Figma、图片与视频编辑器',use:'画布是主对象；命令可采用浮动工具条或局部工具区，不必占满顶部。',risk:'画布应持续最大化；无选中对象时右侧应降噪或自动收起。'},
+    {id:'dashboard',name:'顶部导航 + 卡片网格',tag:'概览型',top:'shown',examples:'数据看板、启动页、应用市场',use:'用户先扫描多组并列信息，再通过顶部导航进入单一模块。',risk:'卡片数量不能代替信息架构；窗口变化需要改列数而非缩小卡片。'},
+    {id:'settings',name:'设置目录 + 单列内容',tag:'配置型',top:'hidden',examples:'系统设置、应用偏好',use:'左侧用于分类，右侧从上到下完成配置；通常不需要额外应用顶部区。',risk:'内容区过宽会降低扫描效率；相关设置需要成组。'}
   ],
   products: [
     {name:'VS Code',type:'IDE 工作台',structure:'Activity Bar、Primary / Secondary Side Bar、Editor、Panel、Status Bar；区域可隐藏和移动。',task:'代码编辑与多种工具视图并行。',lesson:'把右侧AI视为可切换辅助区；底部面板可移动，不绑定唯一方向。',source:'S04'},

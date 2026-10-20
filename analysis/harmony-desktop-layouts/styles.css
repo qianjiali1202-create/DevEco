@@ -2,3 +2,14 @@
 @media(max-width:1180px){.hero-answer{grid-template-columns:1fr 1fr}.hero-answer>div:nth-child(2){border-right:0}.base-anatomy{grid-template-columns:1fr}.pattern-card{grid-template-columns:170px minmax(0,1fr)}.lab-shell{grid-template-columns:280px minmax(0,1fr)}.responsive-flow{grid-template-columns:1fr 1fr}.mini-body{grid-template-columns:200px minmax(0,1fr) 280px}}
 @media(max-width:900px){.hero-answer{grid-template-columns:1fr 1fr}.pattern-grid{grid-template-columns:1fr}.lab-shell{grid-template-columns:1fr}.lab-controls{display:grid;grid-template-columns:1fr 1fr}.lab-controls .sheet-head,.lab-controls .preset-row,.lab-controls .caption{grid-column:1/-1}.control-grid{display:grid;grid-template-columns:1fr 1fr;grid-column:1/-1}.mini-body{grid-template-columns:180px minmax(0,1fr) 220px}}
 @media(max-width:640px){.hero-answer{grid-template-columns:1fr}.hero-answer>div{border-right:0;border-bottom:1px solid var(--layout-line)}.base-anatomy{padding:14px}.mini-body{grid-template-columns:96px minmax(0,1fr)}.mini-side{display:none}.pattern-card{grid-template-columns:1fr}.pattern-visual{border-right:0;border-bottom:1px solid var(--layout-line)}.wire{max-width:240px;margin:auto}.lab-controls{display:block}.control-grid{display:block}.stage{height:400px;padding:14px}.responsive-flow,.decision-grid{grid-template-columns:1fr}.source-item{grid-template-columns:36px minmax(0,1fr)}.source-item>a{grid-column:2}.hero-answer strong{font-size:22px}.recommendation{align-items:flex-start}}
+
+/* 应用顶部区是独立可选维度，不由内容列数决定。 */
+.mini-top{border-bottom-style:dashed;color:var(--layout-muted)}
+.wire.no-app-top .wtop{display:none}
+.wire.no-app-top[data-layout=left],.wire.no-app-top[data-layout=settings]{grid-template:"left main main" 1fr/38px 1fr 1fr}
+.wire.no-app-top[data-layout=list]{grid-template:"left main right" 1fr/38px 54px 1fr}
+.wire.no-app-top[data-layout=three]{grid-template:"left main right" 1fr/44px 1fr 52px}
+.wire.no-app-top[data-layout=canvas]{grid-template:"left main right" 1fr/42px 1fr 48px}
+.toggle-row input{width:16px;height:16px;accent-color:var(--layout-blue)}
+.control-grid input:disabled{opacity:.45;cursor:not-allowed}
+.layout-frame [hidden]{display:none!important}

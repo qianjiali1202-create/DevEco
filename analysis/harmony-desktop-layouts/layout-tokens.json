@@ -12,7 +12,7 @@
     "external": "1920 × 1080"
   },
   "regions": {
-    "top_bar": {"default": 48, "range": "40–48 vp"},
+    "application_top_region": {"optional": true, "default": 0, "when_used": 48, "range": "40–48 vp", "note": "与内容列数独立；系统窗口框架不计入"},
     "directory": {"default": 240, "range": "200–320 vp"},
     "main_content": {"default": "flex", "recommended_min": 640},
     "auxiliary": {"default": 320, "range": "280–420 vp"},

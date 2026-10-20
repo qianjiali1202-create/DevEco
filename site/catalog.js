@@ -363,9 +363,9 @@ window.DEVECO_CATALOG = {
       note: '对内汇报与对外协同共用的事实基础：以开发者证据推动方案，不以设计观点推动方案。',
       items: [
         {
-          title: '鸿蒙电脑原生应用布局研究：从顶部栏到三列工作区',
+          title: '鸿蒙电脑原生应用布局研究：窗口结构与多列工作区',
           author: '钱佳丽', subtitle: 'Desktop Layout Atlas · Responsive Window Lab',
-          desc: '钱佳丽：整理顶部栏、左侧导航、列表详情、三列工作区、IDE、画布、看板和设置等8类主流桌面布局；对照VS Code、IntelliJ IDEA、Xcode、Figma及系统导航模式。以1440×960为主画板，支持自定义窗口和面板尺寸。',
+          desc: '钱佳丽：整理顶部导航、左侧导航、列表详情、三列工作区、IDE、画布、看板和设置等8类主流桌面布局；把内容列结构与应用顶部区拆成独立维度。以1440×960为主画板，支持自定义窗口和面板尺寸。',
           view: 'ready', date: '2026-10-20', href: 'analysis/harmony-desktop-layouts/index.html',
           links: [
             { label: '布局图谱', href: 'analysis/harmony-desktop-layouts/index.html#patterns' },

@@ -41,7 +41,7 @@
         <div class="page-heading">
           <p class="eyebrow">DESIGN RESEARCH / 03</p>
           <h1>鸿蒙电脑原生应用布局怎么选</h1>
-          <p>从窗口任务出发选择顶部栏、侧栏、内容区和辅助区；用一个主画板建立方案，用窗口断点验证变化。</p>
+          <p>先确定内容区是一列、两列还是三列，再判断是否需要应用顶部区；用一个主画板建立方案，用窗口断点验证变化。</p>
         </div>
         <div class="metadata"><span>8 类布局模式</span><span>6 个市场产品参考</span><span>尺寸可自定义</span></div>
 
@@ -57,10 +57,10 @@
           <a class="button primary" href="#lab">打开尺寸实验器</a>
         </div>
 
-        <h2 class="subheading">主画板的推荐骨架</h2>
-        <div class="base-anatomy sheet" aria-label="1440乘960布局尺寸示意">
+        <h2 class="subheading">主画板的推荐骨架（示意开启顶部区）</h2>
+        <div class="base-anatomy sheet" aria-label="1440乘960布局尺寸示意，应用顶部区可选">
           <div class="mini-window anatomy-window">
-            <div class="mini-top">顶部栏 48</div>
+            <div class="mini-top">可选应用顶部区 · 0 / 48</div>
             <div class="mini-body">
               <div class="mini-nav">目录<br><b>240</b></div>
               <div class="mini-main">主内容<br><b>自适应，建议不小于 640</b></div>
@@ -69,7 +69,8 @@
             <div class="mini-status">状态栏 24 · 可选</div>
           </div>
           <div class="base-notes">
-            <p><strong>顶部栏</strong><span>40–48 vp。承载窗口级标题、全局操作和少量高频命令。</span></p>
+            <p><strong>系统窗口区</strong><span>由系统窗口框架管理，不等于应用必须再放一条顶部栏。</span></p>
+            <p><strong>应用顶部区</strong><span>可选，关闭为 0；需要全局导航或命令时建议 40–48 vp，也可改用侧栏、局部或浮动工具条。</span></p>
             <p><strong>目录列</strong><span>默认 240 vp，可调范围 200–320；超过范围应考虑层级或内容问题。</span></p>
             <p><strong>主内容</strong><span>获得剩余空间，是布局中唯一必须持续伸缩的区域。</span></p>
             <p><strong>辅助列</strong><span>默认 320 vp，可调范围 280–420；窗口变窄时优先折叠。</span></p>
@@ -102,7 +103,8 @@
             <div class="control-grid">
               <label>窗口宽<input class="input short" id="windowWidth" type="number" min="800" max="2560" step="4"></label>
               <label>窗口高<input class="input short" id="windowHeight" type="number" min="600" max="1600" step="4"></label>
-              <label>顶部栏<input class="input short" id="topHeight" type="number" min="0" max="96" step="4"></label>
+              <label class="toggle-row">应用顶部区<input id="topEnabled" type="checkbox" aria-label="显示应用级导航或命令区"></label>
+              <label>顶部区高度<input class="input short" id="topHeight" type="number" min="0" max="96" step="4"></label>
               <label>目录列<input class="input short" id="leftWidth" type="number" min="0" max="480" step="4"></label>
               <label>辅助列<input class="input short" id="rightWidth" type="number" min="0" max="560" step="4"></label>
               <label>底部区<input class="input short" id="bottomHeight" type="number" min="0" max="480" step="4"></label>
@@ -139,7 +141,7 @@
       <section id="guidelines" class="chapter">
         <div class="section-intro"><span class="kicker">DESIGN CHECKLIST</span><h2>从选择布局到交付</h2></div>
         <div class="decision-grid">
-          <article class="sheet"><div class="sheet-head"><strong>1 · 看信息关系</strong></div><ul><li>页面之间平级且不多：顶部导航。</li><li>模块超过 5 个或层级较深：左侧导航。</li><li>选择上一列决定下一列：两列或三列。</li><li>编辑对象需要属性：主内容 + 右侧检查器。</li></ul></article>
+          <article class="sheet"><div class="sheet-head"><strong>1 · 看信息关系</strong></div><ul><li>页面之间平级且不多：可选择顶部导航。</li><li>模块超过 5 个或层级较深：左侧导航。</li><li>选择上一列决定下一列：两列或三列。</li><li>先定列关系，再独立判断是否需要应用顶部区。</li></ul></article>
           <article class="sheet"><div class="sheet-head"><strong>2 · 定区域优先级</strong></div><ul><li>主内容必须持续可见并获得剩余空间。</li><li>目录可折叠，但要保留恢复入口与状态。</li><li>右侧辅助区通常比目录更早折叠。</li><li>面板宽度可调时要设置合理最小值。</li></ul></article>
           <article class="sheet"><div class="sheet-head"><strong>3 · 做四档验证</strong></div><ul><li>1440×960：主设计。</li><li>1236×824：紧凑压力测试。</li><li>1648×1236：展开增值。</li><li>1920×1080：外接显示器。</li></ul></article>
           <article class="sheet"><div class="sheet-head"><strong>4 · 交付开发</strong></div><ul><li>设计 px 作为逻辑单位。</li><li>布局、间距、圆角映射为 vp。</li><li>文字映射为 fp。</li><li>说明断点行为，而不只标一张静态稿。</li></ul></article>
@@ -152,7 +154,7 @@
         <div class="downloads"><a class="button primary" href="RESEARCH.md" download>下载研究材料</a><a class="button" href="layout-tokens.json" download>下载布局参数</a></div>
       </section>
 
-      <footer class="page-footer"><span>钱佳丽 · Harmony Desktop Layouts</span><span>研究 v1.0 / 2026.10.20</span><a href="../../index.html#analysis">返回研究分类</a></footer>
+      <footer class="page-footer"><span>钱佳丽 · Harmony Desktop Layouts</span><span>研究 v1.1 / 2026.10.20</span><a href="../../index.html#analysis">返回研究分类</a></footer>
     </main>
   </div>
   <script src="data.js"></script>
