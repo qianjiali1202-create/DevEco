@@ -29,7 +29,7 @@
    `python3 site/tools/thumb.py <slug>` 出缩略图；然后在这里把对应条目的 view 改成 'ready'、补 href 与 thumb。
    ===================================================================== */
 window.DEVECO_CATALOG = {
-  updated: '2026-10-08',
+  updated: '2026-10-20',
   title: '鸿蒙开发工具体验',
   lede: '围绕 DevEco Studio / DevEco Code / DevEco CLI 的体验设计：29 条创新点各一个可点的界面稿 demo（其中 9 条是新一轮规划重点），全部按鸿蒙电脑版蓝本与 AI Coding / 多 Agent 场景重做；加上设计系统、分析与汇报材料。全部是本地静态文件，双击即开。',
 
@@ -362,6 +362,19 @@ window.DEVECO_CATALOG = {
       icon: 'i-cat-chart',
       note: '对内汇报与对外协同共用的事实基础：以开发者证据推动方案，不以设计观点推动方案。',
       items: [
+        {
+          title: '鸿蒙电脑原生应用布局研究：从顶部栏到三列工作区',
+          author: '钱佳丽', subtitle: 'Desktop Layout Atlas · Responsive Window Lab',
+          desc: '钱佳丽：整理顶部栏、左侧导航、列表详情、三列工作区、IDE、画布、看板和设置等8类主流桌面布局；对照VS Code、IntelliJ IDEA、Xcode、Figma及系统导航模式。以1440×960为主画板，支持自定义窗口和面板尺寸。',
+          view: 'ready', date: '2026-10-20', href: 'analysis/harmony-desktop-layouts/index.html',
+          links: [
+            { label: '布局图谱', href: 'analysis/harmony-desktop-layouts/index.html#patterns' },
+            { label: '尺寸实验器', href: 'analysis/harmony-desktop-layouts/index.html#lab' },
+            { label: '研究材料', href: 'analysis/harmony-desktop-layouts/RESEARCH.md' },
+          ],
+          tags: ['钱佳丽', '鸿蒙电脑', '原生应用', '布局', '三列', '响应式', '窗口', 'Int UI Kit'],
+          thumb: { type: 'image', src: 'analysis/harmony-desktop-layouts/assets/layout-preview.png' },
+        },
         {
           title: '鸿蒙电脑 IDE：字号、密度与组件尺度研究',
           author: '钱佳丽', subtitle: 'Typography & Components · UX Research',
