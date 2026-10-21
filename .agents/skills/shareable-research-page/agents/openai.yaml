@@ -1,0 +1,4 @@
+interface:
+  display_name: "可分享研究页面"
+  short_description: "将研究和交互实验整理成稳定、可复现的网页链接"
+  default_prompt: "使用 $shareable-research-page，把这份研究整理为可分享网页，保留稳定路径和关键交互状态，并合入 DevEco 研究分类。"

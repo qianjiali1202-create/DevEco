@@ -1,0 +1,4 @@
+interface:
+  display_name: "仓库提交与发布"
+  short_description: "安全提交、推送并验证 GitHub Pages 页面"
+  default_prompt: "使用 $repository-publish，把已完成的改动提交到目标仓库并发布，保留现有 Pages 地址，验证具体页面。"

@@ -19,14 +19,13 @@
 # 换人/换邮箱：改 GIT_USER_NAME / GIT_USER_EMAIL，并把旧邮箱留在白名单里。
 set -euo pipefail
 
-GIT_USER_NAME="Cindy_wxd"
-GIT_USER_EMAIL="209322477+Cinnnnnnndy@users.noreply.github.com"
+GIT_USER_NAME="qianjiali1202-create"
+GIT_USER_EMAIL="282194346+qianjiali1202-create@users.noreply.github.com"
 
 # 已经是仓库主人本人的邮箱就不动（各仓库历史里出现过的几个真实身份）。
 KNOWN_GOOD_EMAILS="
-209322477+Cinnnnnnndy@users.noreply.github.com
-wangxindi0126@outlook.com
-xw2733@caa.columbia.edu
+282194346+qianjiali1202-create@users.noreply.github.com
+qianjiali1202@gmail.com
 "
 
 # 在仓库根目录执行；hook 的工作目录不保证，所以显式切过去。

@@ -41,6 +41,23 @@ GitHub 用于保存与共享 Skill 文件，实际分析在 Codex 中运行；�
 
 该目录包含入口、界面元数据和四份按需读取的参考资料；共享时保留完整目录。修改后提交到仓库，其他使用者同步更新即可。
 
+## 仓库发布与分享 Skills
+
+本仓库另外提供两个经过适配的仓库级 Skill。它们参考了公开仓库中的发布与可分享链接工作方式，但已移除原作者身份、PTO 专属依赖和硬编码路径，并按本仓库的 Codex、GitHub Pages 与研究目录重写。
+
+| Skill | 用途 | 入口 |
+|---|---|---|
+| `$repository-publish` | 提交、推送、保持现有 Pages 发布方式并验证具体页面 | [SKILL.md](.agents/skills/repository-publish/SKILL.md) |
+| `$shareable-research-page` | 把研究材料或交互实验器整理成稳定、可复现、可维护的页面链接 | [SKILL.md](.agents/skills/shareable-research-page/SKILL.md) |
+
+可直接使用：
+
+> 使用 $shareable-research-page，把 [材料或现有页面] 整理成可分享研究网页，保留稳定路径，让关键交互状态能通过 URL 复现，并合入 DevEco 的「分析与研究」。
+
+> 使用 $repository-publish，把当前已经验证的改动提交到 qianjiali1202-create/DevEco 的 main 分支，保留现有 GitHub Pages 发布方式，并验证实际页面链接。
+
+如果任务同时包含材料研究、网页生成和发布，可以依次调用 `$material-analysis`、`$shareable-research-page` 和 `$repository-publish`。同步仓库后若新 Skill 未立即出现，重新打开 Codex 会话或重启 Codex。
+
 ## 里面有什么
 
 | 目录 / 文件 | 是什么 |

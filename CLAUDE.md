@@ -5,8 +5,8 @@
 每一条 commit 都以仓库主人的身份提交，而不是 Claude：
 
 ```
-user.name  = Cindy_wxd
-user.email = 209322477+Cinnnnnnndy@users.noreply.github.com
+user.name  = qianjiali1202-create
+user.email = 282194346+qianjiali1202-create@users.noreply.github.com
 ```
 
 `.claude/hooks/set-git-identity.sh` 会在每次会话开始时把这两项写进 `.git/config`
@@ -14,8 +14,8 @@ user.email = 209322477+Cinnnnnnndy@users.noreply.github.com
 本机已配好本人身份时该 hook 不改动。hook 没跑到时，commit 前手动执行：
 
 ```bash
-git config --local user.name  "Cindy_wxd"
-git config --local user.email "209322477+Cinnnnnnndy@users.noreply.github.com"
+git config --local user.name  "qianjiali1202-create"
+git config --local user.email "282194346+qianjiali1202-create@users.noreply.github.com"
 git config --local commit.gpgsign false
 ```
 
